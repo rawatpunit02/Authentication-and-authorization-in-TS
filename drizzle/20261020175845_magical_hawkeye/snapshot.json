@@ -1,9 +1,9 @@
 {
   "version": "8",
   "dialect": "postgres",
-  "id": "267d2567-9466-45fa-9ec7-2136d04d3b53",
+  "id": "6466e04b-e56f-4544-b437-c723e90434b8",
   "prevIds": [
-    "2d200f88-cf51-4310-b504-8d2e6d079cdc"
+    "00000000-0000-0000-0000-000000000000"
   ],
   "ddl": [
     {
@@ -13,22 +13,13 @@
       "schema": "public"
     },
     {
-      "type": "integer",
+      "type": "uuid",
       "typeSchema": null,
       "notNull": true,
       "dimensions": 0,
-      "default": null,
+      "default": "gen_random_uuid()",
       "generated": null,
-      "identity": {
-        "type": "always",
-        "name": "users_id_seq",
-        "increment": "1",
-        "startWith": "1",
-        "minValue": "1",
-        "maxValue": "2147483647",
-        "cache": 1,
-        "cycle": false
-      },
+      "identity": null,
       "name": "id",
       "entityType": "columns",
       "schema": "public",

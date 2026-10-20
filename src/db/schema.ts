@@ -1,9 +1,9 @@
 import { timestamp } from "drizzle-orm/cockroach-core";
-import { integer, pgTable, varchar,text,boolean } from "drizzle-orm/pg-core";
+import { integer,uuid, pgTable, varchar,text,boolean } from "drizzle-orm/pg-core";
 import z from "zod";
 
 export const usersTable = pgTable("users", {
-  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  id: uuid('id').primaryKey().defaultRandom(),
   firstName: varchar('first_name',{length:45}).notNull(),
   lastName:varchar('last_name',{length:45}),
   email: varchar().notNull().unique(),
